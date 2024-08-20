@@ -10,8 +10,7 @@ spec:
   selector:
     matchLabels:
       name: worker-app-pod
-      app: demo-voting-app
-    
+      app: demo-voting-app    
   template:
     metadata:
       name: worker-app-pod
@@ -22,4 +21,10 @@ spec:
       containers:
         - name: worker-app
           image: kodekloud/examplevotingapp_worker:v1
-
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "100m"
+            requests:
+              memory: "64Mi"
+              cpu: "50m"  

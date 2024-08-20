@@ -10,8 +10,7 @@ spec:
   selector:
     matchLabels:
       name: voting-app-pod
-      app: demo-voting-app
-    
+      app: demo-voting-app    
   template:
     metadata:
       name: voting-app-pod
@@ -24,4 +23,10 @@ spec:
           image: kodekloud/examplevotingapp_vote:v1
           ports:
             - containerPort: 80
-
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "100m"
+            requests:
+              memory: "64Mi"
+              cpu: "50m"  

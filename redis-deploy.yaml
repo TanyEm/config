@@ -10,8 +10,7 @@ spec:
   selector:
     matchLabels:
       name: redis-pod
-      app: demo-voting-app
-    
+      app: demo-voting-app  
   template:
     metadata:
       name: redis-pod
@@ -24,4 +23,10 @@ spec:
           image: redis
           ports:
             - containerPort: 6379
-
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "100m"
+            requests:
+              memory: "64Mi"
+              cpu: "50m"  
